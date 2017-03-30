@@ -1,5 +1,5 @@
 {
-  "name": "Logins",
+  "name": "domomaker-a",
   "version": "1.0.0",
   "engines": {
     "node": "7.5.0",
@@ -22,7 +22,7 @@
     "Login"
   ],
   "author": "Cody Van De Mark",
-  "license": "Apache 2.0",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
@@ -44,5 +44,13 @@
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.16.0",
     "nodemon": "^1.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VLesnar/domomaker-a.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VLesnar/domomaker-a/issues"
+  },
+  "homepage": "https://github.com/VLesnar/domomaker-a#readme"
 }
