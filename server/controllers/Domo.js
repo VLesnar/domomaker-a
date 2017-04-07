@@ -44,5 +44,20 @@ const makeDomo = (req, res) => {
   return domoPromise;
 };
 
+const getDomos = (req, res) => {
+  const request = req;
+  const response = res;
+
+  return Domo.DomoModel.findByOwner(request.session.account._id, (err, docs) => {
+    if (err) {
+      console.log(err);
+      return response.status(400).json({ error: 'An error occured!' });
+    }
+
+    return response.json({ domos: docs });
+  });
+};
+
 module.exports.makerPage = makerPage;
+module.exports.getDomos = getDomos;
 module.exports.make = makeDomo;
