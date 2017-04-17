@@ -43,7 +43,31 @@ var renderDomo = function renderDomo() {
       { htmlFor: "age" },
       "Age: "
     ),
-    React.createElement("input", { id: "domoAge", type: "text", name: "age", placeholder: "Domo Age" }),
+    React.createElement("input", { id: "domoAge", type: "text", name: "age" }),
+    React.createElement(
+      "label",
+      { htmlFor: "strength" },
+      "Strength: "
+    ),
+    React.createElement("input", { id: "domoStr", type: "text", name: "strength" }),
+    React.createElement(
+      "label",
+      { htmlFor: "agility" },
+      "Agility: "
+    ),
+    React.createElement("input", { id: "domoAgl", type: "text", name: "agility" }),
+    React.createElement(
+      "label",
+      { htmlFor: "intelligence" },
+      "Intelligence: "
+    ),
+    React.createElement("input", { id: "domoInt", type: "text", name: "intelligence" }),
+    React.createElement(
+      "label",
+      { htmlFor: "charisma" },
+      "Charisma: "
+    ),
+    React.createElement("input", { id: "domoCha", type: "text", name: "charisma" }),
     React.createElement("input", { type: "hidden", name: "_csrf", value: this.props.csrf }),
     React.createElement("input", { className: "makeDomoSubmit", type: "submit", value: "Make Domo" })
   );
@@ -62,6 +86,7 @@ var renderDomoList = function renderDomoList() {
     );
   }
 
+  // Contains starting code for incrementing stats - Not working
   var domoNodes = this.state.data.map(function (domo) {
     return React.createElement(
       "div",
@@ -80,7 +105,39 @@ var renderDomoList = function renderDomoList() {
         " Age: ",
         domo.age,
         " "
-      )
+      ),
+      React.createElement(
+        "h3",
+        { className: "domoStr" },
+        " Strength: ",
+        domo.strength,
+        " "
+      ),
+      React.createElement("input", { className: "increaseStat", type: "submit", value: "Increase Strength" }),
+      React.createElement(
+        "h3",
+        { className: "domoAgl" },
+        " Agility: ",
+        domo.agility,
+        " "
+      ),
+      React.createElement("input", { className: "increaseStat", type: "submit", value: "Increase Agility" }),
+      React.createElement(
+        "h3",
+        { className: "domoInt" },
+        " Intelligence: ",
+        domo.intelligence,
+        " "
+      ),
+      React.createElement("input", { className: "increaseStat", type: "submit", value: "Increase Intelligence" }),
+      React.createElement(
+        "h3",
+        { className: "domoCha" },
+        " Charisma: ",
+        domo.charisma,
+        " "
+      ),
+      React.createElement("input", { className: "increaseStat", type: "submit", value: "Increase Charisma" })
     );
   });
 

@@ -13,14 +13,26 @@ const makerPage = (req, res) => {
   });
 };
 
+// Attempt to update stat in database
+// const updateDomo = (req, res) => {
+//  let num = domo.charisma;
+//  num++;
+//  Domo.update({ name: domo.name }, { $set: { charisma: num }}, callback);
+// };
+
 const makeDomo = (req, res) => {
-  if (!req.body.name || !req.body.age) {
-    return res.status(400).json({ error: 'RAWR! Both name and age are required.' });
+  if (!req.body.name || !req.body.age || !req.body.strength ||
+      !req.body.agility || !req.body.intelligence || !req.body.charisma) {
+    return res.status(400).json({ error: 'RAWR! Both name and stats are required.' });
   }
 
   const domoData = {
     name: req.body.name,
     age: req.body.age,
+    strength: req.body.strength,
+    agility: req.body.agility,
+    intelligence: req.body.intelligence,
+    charisma: req.body.charisma,
     owner: req.session.account._id,
   };
 
